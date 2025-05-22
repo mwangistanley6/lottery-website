@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="canvas" width="600" height="180"></canvas>
+<script>
+  // Create a lottery banner on a canvas
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  
+  // Draw gradient background
+  const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+  gradient.addColorStop(0, '#FF8C00');
+  gradient.addColorStop(1, '#FFD700');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 600, 180);
+  
+  // Draw lottery wheel
+  ctx.beginPath();
+  ctx.arc(300, 90, 60, 0, 2 * Math.PI);
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fill();
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = '#FF6600';
+  ctx.stroke();
+  
+  // Draw center of wheel
+  ctx.beginPath();
+  ctx.arc(300, 90, 25, 0, 2 * Math.PI);
+  ctx.fillStyle = '#FF6600';
+  ctx.fill();
+  
+  // Add GO text
+  ctx.font = 'bold 20px Arial';
+  ctx.fillStyle = '#FFFFFF';
+  ctx.textAlign = 'center';
+  ctx.fillText('GO', 300, 97);
+  
+  // Draw wheel segments
+  for (let i = 0; i < 6; i++) {
+    ctx.beginPath();
+    ctx.moveTo(300, 90);
+    ctx.arc(300, 90, 60, i * Math.PI / 3, (i + 1) * Math.PI / 3);
+    ctx.closePath();
+    ctx.fillStyle = i % 2 === 0 ? '#FFDDDD' : '#DDFFDD';
+    ctx.fill();
+    ctx.stroke();
+  }
+  
+  // Draw gift box on right
+  ctx.fillStyle = '#FF3333';
+  ctx.fillRect(450, 60, 60, 70);
+  ctx.fillStyle = '#FFAAAA';
+  ctx.fillRect(455, 65, 50, 10);
+  ctx.fillStyle = '#FF3333';
+  ctx.fillRect(470, 40, 20, 20);
+  
+  // Draw gift box on left
+  ctx.fillStyle = '#FF3333';
+  ctx.fillRect(150, 70, 50, 60);
+  ctx.fillStyle = '#FFAAAA';
+  ctx.fillRect(155, 75, 40, 10);
+  ctx.fillStyle = '#FF3333';
+  ctx.fillRect(165, 50, 20, 20);
+  
+  // Add text
+  ctx.font = 'bold 24px Arial';
+  ctx.fillStyle = '#FFFFFF';
+  ctx.textAlign = 'center';
+  ctx.fillText('Click here to enter the lottery tour', 300, 160);
+  
+  // Convert canvas to image data
+  const imageData = canvas.toDataURL('image/jpeg', 0.8);
+  document.write('<img src="' + imageData + '"/>');
+  document.write('<p>Right-click the image and select "Save image as..." to save it as lottery-banner.jpg</p>');
+</script>
+</body>
+</html>

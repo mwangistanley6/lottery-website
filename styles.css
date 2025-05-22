@@ -1,0 +1,364 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #388E3C;
+    --background-color: #2E7D32;
+    --header-background: #2E7D32;
+    --badge-background: #8B0000;
+    --menu-background: #333333;
+    --icon-color: #FFD700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.header-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background-color: var(--header-background);
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.notification-badge {
+    position: relative;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+}
+
+.notification-count {
+    position: absolute;
+    top: -2px;
+    right: 0;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.notification-icon .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #FF5252;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.main-content {
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+h2 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+.badge-section {
+    margin: 1rem 0;
+}
+
+.badge {
+    background-color: var(--badge-background);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.badge-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.badge-text {
+    font-weight: bold;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+    background-color: var(--menu-background);
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.menu-item {
+    background-color: var(--menu-background);
+    border-radius: 5px;
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.5rem;
+}
+
+.lottery-banner {
+    width: 100%;
+    height: 180px;
+    background: url('assets/lottery-image.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    margin: 1rem 0 3.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.lottery-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.lottery-character {
+    width: 30%;
+    height: 150px;
+}
+
+.lottery-wheel {
+    width: 40%;
+    height: 150px;
+}
+
+.lottery-gifts {
+    width: 30%;
+    height: 150px;
+}
+
+.lottery-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    z-index: 100;
+}
+
+.nav-item {
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.75rem;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 auto 0.25rem;
+    color: #FFD700;
+}
+
+.nav-item.active {
+    color: #FFD700;
+}
+
+.nav-item.active .nav-icon {
+    color: #FFD700;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 200;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    color: #FF6600;
+    margin-bottom: 1rem;
+}
+
+.wheel-container {
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.wheel {
+    width: 300px;
+    height: 300px;
+    border: 12px solid #FF6600;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.wheel-item {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transform-origin: 100% 100%;
+    background-color: var(--primary-color);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    padding-left: 30px;
+}
+
+.wheel-item:nth-child(odd) {
+    background-color: #FF8800;
+}
+
+.wheel-item:nth-child(even) {
+    background-color: #FFAA00;
+}
+
+#spinButton {
+    margin-top: 1.5rem;
+    padding: 0.7rem 3rem;
+    background-color: #FF6600;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+#spinButton:hover {
+    background-color: #FF8800;
+}
+
+.close-modal {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: #666;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background-color: #888;
+}
