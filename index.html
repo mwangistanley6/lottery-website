@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to ADX</title>
+    <title>Welcome to DXM</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>    <div class="header">        <div class="logo-container">
@@ -157,6 +158,268 @@
                 <button id="spinButton">SPIN</button>
             </div>
             <button class="close-modal" onclick="closeLottery()">Close</button>
+        </div>
+    </div>
+
+    <!-- Section content containers -->
+    <div class="section-container" id="activities-section" style="display: none;">
+        <div class="section-header">
+            <h1>Company Activities</h1>
+            <div class="section-subtitle">Stay engaged with our events</div>
+        </div>
+        <div class="activity-list">
+            <div class="activity-item">
+                <div class="activity-date">May 25, 2025</div>
+                <div class="activity-title">Team Building Workshop</div>
+                <div class="activity-description">Join us for a fun day of team building activities and games!</div>
+                <button class="activity-button">Join Event</button>
+            </div>
+            <div class="activity-item">
+                <div class="activity-date">May 28, 2025</div>
+                <div class="activity-title">Tech Talk: Future of AI</div>
+                <div class="activity-description">Learn about the latest developments in AI technology.</div>
+                <button class="activity-button">Register Now</button>
+            </div>
+            <div class="activity-item">
+                <div class="activity-date">June 1, 2025</div>
+                <div class="activity-title">Summer BBQ Party</div>
+                <div class="activity-description">Annual company BBQ with games and prizes!</div>
+                <button class="activity-button">RSVP</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="news-section" style="display: none;">
+        <div class="section-header">
+            <h1>Latest News</h1>
+            <div class="section-subtitle">Company updates and announcements</div>
+        </div>
+        <div class="news-list">
+            <div class="news-item">
+                <img src="https://picsum.photos/300/200" alt="News Image" class="news-image">
+                <div class="news-date">May 23, 2025</div>
+                <div class="news-title">ADX Expands Global Operations</div>
+                <div class="news-preview">We're excited to announce our expansion into new markets...</div>
+                <button class="news-button">Read More</button>
+            </div>
+            <div class="news-item">
+                <img src="https://picsum.photos/300/200" alt="News Image" class="news-image">
+                <div class="news-date">May 22, 2025</div>
+                <div class="news-title">New Partnership Announcement</div>
+                <div class="news-preview">Strategic partnership formed with leading tech companies...</div>
+                <button class="news-button">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="benefits-section" style="display: none;">
+        <div class="section-header">
+            <h1>Member Benefits</h1>
+            <div class="section-subtitle">Exclusive perks for our members</div>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🏥</div>
+                <div class="benefit-title">Health Insurance</div>
+                <div class="benefit-description">Comprehensive health coverage for you and family</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-title">401(k) Match</div>
+                <div class="benefit-description">100% match up to 6% of your salary</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎓</div>
+                <div class="benefit-title">Education</div>
+                <div class="benefit-description">$5,000 annual learning budget</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏖️</div>
+                <div class="benefit-title">PTO</div>
+                <div class="benefit-description">Unlimited paid time off</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="advertising-section" style="display: none;">
+        <div class="section-header">
+            <h1>Advertising Positions</h1>
+            <div class="section-subtitle">Current job openings</div>
+        </div>
+        <div class="jobs-list">
+            <div class="job-item">
+                <div class="job-title">Senior Software Engineer</div>
+                <div class="job-location">📍 San Francisco, CA</div>
+                <div class="job-type">Full-time</div>
+                <div class="job-description">We're looking for an experienced software engineer to join our team...</div>
+                <button class="job-button">Apply Now</button>
+            </div>
+            <div class="job-item">
+                <div class="job-title">Product Manager</div>
+                <div class="job-location">📍 New York, NY</div>
+                <div class="job-type">Full-time</div>
+                <div class="job-description">Seeking a product manager to lead our newest initiatives...</div>
+                <button class="job-button">Apply Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="team-section" style="display: none;">
+        <div class="section-header">
+            <h1>Team Expansion</h1>
+            <div class="section-subtitle">Help us grow our team</div>
+        </div>
+        <div class="referral-program">
+            <div class="referral-card">
+                <div class="referral-icon">🤝</div>
+                <div class="referral-title">Employee Referral Program</div>
+                <div class="referral-description">Earn up to $5,000 for successful referrals</div>
+                <button class="referral-button">Refer Someone</button>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Open Positions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$5K</div>
+                    <div class="stat-label">Referral Bonus</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Successful Referrals</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="financial-section" style="display: none;">
+        <div class="section-header">
+            <h1>Financial Management</h1>
+            <div class="section-subtitle">Track your investments</div>
+        </div>
+        <div class="financial-dashboard">
+            <div class="balance-card">
+                <div class="balance-label">Total Balance</div>
+                <div class="balance-amount">$12,458.90</div>
+                <div class="balance-trend">↑ 12.5% this month</div>
+            </div>
+            <div class="investments-grid">
+                <div class="investment-item">
+                    <div class="investment-title">Stocks</div>
+                    <div class="investment-amount">$8,245.30</div>
+                    <div class="investment-trend positive">+5.2%</div>
+                </div>
+                <div class="investment-item">
+                    <div class="investment-title">Bonds</div>
+                    <div class="investment-amount">$3,102.40</div>
+                    <div class="investment-trend positive">+1.8%</div>
+                </div>
+                <div class="investment-item">
+                    <div class="investment-title">Cash</div>
+                    <div class="investment-amount">$1,111.20</div>
+                    <div class="investment-trend neutral">0%</div>
+                </div>
+            </div>
+            <button class="invest-button">Make Investment</button>
+        </div>
+    </div>
+
+    <div class="section-container" id="task-section" style="display: none;">
+        <div class="section-header">
+            <h1>Tasks</h1>
+            <div class="section-subtitle">Your daily assignments</div>
+        </div>
+        <div class="tasks-list">
+            <div class="task-item">
+                <div class="task-status completed"></div>
+                <div class="task-content">
+                    <div class="task-title">Complete orientation</div>
+                    <div class="task-due">Due: May 24, 2025</div>
+                </div>
+                <div class="task-priority high">High</div>
+            </div>
+            <div class="task-item">
+                <div class="task-status pending"></div>
+                <div class="task-content">
+                    <div class="task-title">Submit weekly report</div>
+                    <div class="task-due">Due: May 25, 2025</div>
+                </div>
+                <div class="task-priority medium">Medium</div>
+            </div>
+            <div class="task-item">
+                <div class="task-status pending"></div>
+                <div class="task-content">
+                    <div class="task-title">Team meeting preparation</div>
+                    <div class="task-due">Due: May 26, 2025</div>
+                </div>
+                <div class="task-priority low">Low</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="level-section" style="display: none;">
+        <div class="section-header">
+            <h1>Level Progress</h1>
+            <div class="section-subtitle">Your growth journey</div>
+        </div>
+        <div class="level-dashboard">
+            <div class="level-card">
+                <div class="level-info">
+                    <div class="current-level">Level 5</div>
+                    <div class="level-title">Senior Associate</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%"></div>
+                </div>
+                <div class="progress-info">750/1000 XP to Level 6</div>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <div class="achievement-icon">🌟</div>
+                    <div class="achievement-title">Top Performer</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🎯</div>
+                    <div class="achievement-title">Goal Crusher</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🤝</div>
+                    <div class="achievement-title">Team Player</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container" id="profile-section" style="display: none;">
+        <div class="section-header">
+            <h1>My Profile</h1>
+            <div class="section-subtitle">Personal information</div>
+        </div>
+        <div class="profile-content">
+            <div class="profile-header">
+                <div class="profile-avatar">👤</div>
+                <div class="profile-info">
+                    <div class="profile-name">John Doe</div>
+                    <div class="profile-title">Senior Software Engineer</div>
+                    <div class="profile-team">Engineering Team</div>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Performance</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Years</div>
+                </div>
+            </div>
+            <button class="edit-profile-button">Edit Profile</button>
         </div>
     </div>
 

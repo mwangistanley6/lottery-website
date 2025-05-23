@@ -1,11 +1,60 @@
 // Navigation function
 function navigate(section) {
+    // Update bottom nav
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => item.classList.remove('active'));
     event.currentTarget.classList.add('active');
     
-    // Show toast notification instead of alert for better UX
-    showToast(`Navigating to ${section} section...`);
+    // Show the appropriate section
+    showSection(section);
+}
+
+// Function to show a specific section
+function showSection(section) {
+    // Hide all sections first
+    const sections = document.querySelectorAll('.section-container');
+    sections.forEach(s => s.style.display = 'none');
+    
+    // Show the main content by default
+    const mainContent = document.querySelector('.main-content');
+    mainContent.style.display = 'block';
+    
+    // Handle home section
+    const homeElements = document.querySelectorAll('.badge-section, .menu-grid, .lottery-banner');
+    
+    // If we're showing the home section (or no section specified)
+    if (!section || section === 'home') {
+        // Show the main content elements and ensure proper display
+        homeElements.forEach(el => {
+            if (el) {
+                el.style.display = el.classList.contains('menu-grid') ? 'grid' : 'block';
+            }
+        });
+        // Update nav state
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.classList.toggle('active', item.querySelector('span').textContent.toLowerCase() === 'home');
+        });
+        return;
+    }
+    
+    // Hide home elements when showing other sections
+    homeElements.forEach(el => {
+        if (el) el.style.display = 'none';
+    });
+    
+    // Hide the main content elements
+    document.querySelectorAll('.badge-section, .menu-grid, .lottery-banner').forEach(el => {
+        if (el) el.style.display = 'none';
+    });
+    
+    // Show the selected section
+    const sectionElement = document.getElementById(`${section}-section`);
+    if (sectionElement) {
+        sectionElement.style.display = 'block';
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
 }
 
 // Function to show a toast notification
@@ -50,44 +99,34 @@ function showToast(message) {
 
 // Section display function
 function showSection(section) {
-    // Show modal with section info
-    const sectionInfo = {
-        'activities': {
-            title: 'Company Activities',
-            description: 'View upcoming events and join company activities',
-            icon: '🏆'
-        },
-        'news': {
-            title: 'Latest News',
-            description: 'Stay updated with company announcements and industry news',
-            icon: '📰'
-        },
-        'benefits': {
-            title: 'Member Benefits',
-            description: 'Explore exclusive benefits available to DXM members',
-            icon: '👑'
-        },
-        'advertising': {
-            title: 'Advertising Positions',
-            description: 'Browse and apply for available job opportunities',
-            icon: '📱'
-        },
-        'team': {
-            title: 'Team Expansion',
-            description: 'Learn about our growing team and join us',
-            icon: '👥'
-        },
-        'financial': {
-            title: 'Financial Management',
-            description: 'Track your earnings and manage your investments',
-            icon: '💰'
-        }
-    };
+    // Hide all sections first
+    const sections = document.querySelectorAll('.section-container');
+    sections.forEach(s => s.style.display = 'none');
     
-    const info = sectionInfo[section];
+    // Show the main content by default
+    document.querySelector('.main-content').style.display = 'block';
     
-    // Create and show modal
-    showSectionModal(info.title, info.description, info.icon);
+    // If we're showing the home section (or no section specified)
+    if (!section || section === 'home') {
+        // Show the main content elements
+        document.querySelectorAll('.badge-section, .menu-grid, .lottery-banner').forEach(el => {
+            if (el) el.style.display = 'block';
+        });
+        return;
+    }
+    
+    // Hide the main content elements
+    document.querySelectorAll('.badge-section, .menu-grid, .lottery-banner').forEach(el => {
+        if (el) el.style.display = 'none';
+    });
+    
+    // Show the selected section
+    const sectionElement = document.getElementById(`${section}-section`);
+    if (sectionElement) {
+        sectionElement.style.display = 'block';
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
 }
 
 function showSectionModal(title, description, icon) {
